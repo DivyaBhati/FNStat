@@ -1,37 +1,30 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block page_content %}
-
-<link rel = "stylesheet" href = "{{url_for('static', filename='style.css')}}">
+<head>
+    <meta charset="utf-8" />
+    <title>Hi</title>
+    <link rel = "stylesheet" href = "{{url_for('static', filename='style.css')}}">
+</head>
 <body>
-	<!-- NAVIGATION BAR -->
-	<nav id="navMenu"></nav>
-	<script src="{{url_for('static', filename='interactive.js')}}"></script>
-<div class = "everything">
-
-<!-- checking to see whether we should display the form or the graphs -->
-{% if name2 != None %}
-	<div class = "graphcontainer"> 
-		<!-- overall graph -->
-		<div id ="graph1">
-			<img src= "data:image/png;base64,{{ graph }}" alt = "Graph 	should be here oops.">
-		</div>
-		<!-- zoomed in graph -->
-		<div id ="graph2">
-			<img src= "data:image/png;base64,{{ graph }}" alt = "Graph 	should be here oops.">
-		</div>
-		<!-- correlation data -->
-		<div id = "specificdata">
-			{{ ticker1 }} and {{ ticker2 }} are {{ correlation }}% correlated when {{ tickerlate }} is set {{ offset }} behind {{ tickerearly}}
-		</div>
-	</div>
-
-<!-- display the form -->
-{% else %}
-	<div class="form">
-		{{ wtf.quick_form(form) }}
-	</div>
-{% endif %}
+<div id="namecontainer">
+    <div id="name"> Title
+        <div id="nametext"> Enter two Fortnite names.
+        </div>
+    </div>
 </div>
+<div>
+	{% if name1 == None %}
+	<div class="form">
+	   {{ wtf.quick_form(form) }}
+	</div>
+
+	{% else %}
+	<div class="test">
+		{{ name1 }} is better than {{ name2 }}!
+	</div>
+	{% endif %}
+</div>
+
 </body>
-{% endblock %}{{ wtf.quick_form(form) }}
+{% endblock %}

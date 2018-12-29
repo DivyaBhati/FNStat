@@ -1,7 +1,46 @@
-body {
-	/*gets random image for background*/
-	
+:root {
+  --main-bg: #EE4266;
+  --form-bg: #750D37;
+  
+  --stat-text: white;
+  --number-text: black;
+  --stat-bg: black;
+  --number-bg: #FFD23F;
 }
+
+body {
+	background-color: var(--main-bg);	
+}
+
+.grid {
+	margin: auto;
+	width: 100%;
+	height: 50em;
+	display: grid;
+	grid-template-columns: 3fr 2fr 3fr;
+	grid-template-rows: repeat(6, 1fr);
+}
+
+.stat {
+	background-color: var(--stat-bg);
+	color: var(--stat-text);
+	font-family: 'open_sansbold';
+	text-align: center;
+	padding-top: 1em;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+.number {
+	background-color: var(--number-bg);
+	color: var(--number-text);
+	font-family: 'open_sansbold';
+	text-align: center;
+	padding-top: 1em;
+	font-size: 2em;	
+	text-transform: uppercase;
+}
+
 
 /* Main page */
 .name 

@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Hi</title>
     <link rel = "stylesheet" href = "{{url_for('static', filename='style.css')}}">
+    <link rel = "stylesheet" href = "{{url_for('static', filename='FontSheet.css')}}">
 </head>
 <body>
 <div id="namecontainer">
@@ -20,8 +21,30 @@
 	</div>
 
 	{% else %}
-	<div class="test">
-		{{ name1 }} is better than {{ name2 }}!
+	<div class='grid'>
+		<div class = 'stat'>{{ name1 }} </div>
+		<div class = 'stat'> </div>
+		<div class = 'stat'>{{ name2 }} </div>
+
+		<div class = 'number'>5</div>
+		<div class = 'stat'>Wins</div>
+		<div class = 'number'>5</div>
+
+		<div class = 'number'>5</div>
+		<div class = 'stat'>Kills</div>
+		<div class = 'number'>5</div>
+
+		<div class = 'number'>5</div>
+		<div class = 'stat'>Games Played</div>
+		<div class = 'number'>5</div>
+
+		<div class = 'number'>5</div>
+		<div class = 'stat'>K/D Ratio</div>
+		<div class = 'number'>5</div>
+
+		<div class = 'number'>5</div>
+		<div class = 'stat'>Win Ratio</div>
+		<div class = 'number'>5</div>
 	</div>
 	{% endif %}
 </div>

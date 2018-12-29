@@ -8,16 +8,14 @@
     <link rel = "stylesheet" href = "{{url_for('static', filename='FontSheet.css')}}">
 </head>
 <body>
-<div id="namecontainer">
-    <div id="name"> Title
-        <div id="nametext"> Enter two Fortnite names.
-        </div>
-    </div>
-</div>
+
 <div>
 	{% if name1 == None %}
-	<div class="form">
-	   {{ wtf.quick_form(form) }}
+	<div class="enterinfo">
+    	<div class="formtext">Enter two Fortnite usernames:</div>
+   		<div class="form">
+	   		{{ wtf.quick_form(form) }}
+		</div>
 	</div>
 
 	{% else %}
@@ -26,25 +24,25 @@
 		<div class = 'stat'> </div>
 		<div class = 'stat'>{{ name2 }} </div>
 
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats1[1] }}</div>
 		<div class = 'stat'>Wins</div>
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats2[1] }}</div>
 
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats1[3] }}</div>
 		<div class = 'stat'>Kills</div>
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats2[3] }}</div>
 
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats1[0] }}</div>
 		<div class = 'stat'>Games Played</div>
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats2[0] }}</div>
 
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats1[4] }}</div>
 		<div class = 'stat'>K/D Ratio</div>
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats2[4] }}</div>
 
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats1[2] }}</div>
 		<div class = 'stat'>Win Ratio</div>
-		<div class = 'number'>5</div>
+		<div class = 'number'>{{ stats2[2] }}</div>
 	</div>
 	{% endif %}
 </div>

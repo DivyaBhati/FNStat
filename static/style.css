@@ -1,11 +1,12 @@
 :root {
-  --main-bg: #EE4266;
-  --form-bg: #540D6E;
+  --main-bg: #838E83;
+  --form-bg: #C9CEBD;
+  --form-text: #C4403E;
 
-  --stat-text: white;
-  --number-text: black;
-  --stat-bg: black;
-  --number-bg: #FFD23F;
+  --stat-text: #C9CEBD;
+  --number-text: #64403E;
+  --stat-bg: #6C6061;
+  --number-bg: #B2BCAA;
 }
 
 body {
@@ -14,11 +15,23 @@ body {
 
 .grid {
 	margin: auto;
-	width: 100%;
+	width: 80%;
 	height: 50em;
 	display: grid;
 	grid-template-columns: 3fr 2fr 3fr;
 	grid-template-rows: repeat(6, 1fr);
+	border: 2px solid black;
+}
+
+.vs {
+	background-color: var(--main-bg);
+	color: var(--stat-bg);
+	font-family: 'open_sansbold';
+	text-align: center;
+	padding-top: 1.4em;
+	font-size: 1.8em;
+	text-transform: uppercase;
+	border-bottom: 2px solid black;
 }
 
 .stat {
@@ -26,9 +39,20 @@ body {
 	color: var(--stat-text);
 	font-family: 'open_sansbold';
 	text-align: center;
-	padding-top: 1em;
-	font-size: 2em;
+	padding-top: 2em;
+	font-size: 1.5em;
 	text-transform: uppercase;
+}
+
+.name {
+	background-color: var(--stat-text);
+	color: var(--stat-bg);
+	font-family: 'open_sansbold';
+	text-align: center;
+	padding-top: 1em;
+	font-size: 2.4em;
+	text-transform: uppercase;
+	border-bottom: 2px solid black;
 }
 
 .number {
@@ -36,7 +60,7 @@ body {
 	color: var(--number-text);
 	font-family: 'open_sansbold';
 	text-align: center;
-	padding-top: 1em;
+	padding-top: 1.2em;
 	font-size: 2em;	
 	text-transform: uppercase;
 }
@@ -48,8 +72,8 @@ body {
 	padding: 20px 20px;
 	color: white;
 
-	width: 50%;
-	height: 50%;
+	width: 40%;
+	height: 45%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -57,12 +81,13 @@ body {
 }
 
 .formtext {
-	color: white;
+	color: var(--form-text);
 	text-align: center;
 	font-size: 2em;
 }
 
 form {
+	color: var(--form-text);
 	font-family: 'open_sanslight';
 	margin-top: 2em;
 }

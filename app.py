@@ -34,10 +34,10 @@ def index():
     if form.validate_on_submit():
         name1  = form.name1.data
         name2  = form.name2.data
-        stats1 = get_player_stats(name1)
-        stats2 = get_player_stats(name2)
+        stats1, recents1 = get_player_stats(name1)
+        stats2, recents2 = get_player_stats(name2)
 
-        return render_template('index.html', form=form, name1=name1, name2=name2, stats1=stats1, stats2=stats2)
+        return render_template('index.html', form=form, name1=name1, name2=name2, stats1=stats1, stats2=stats2, recents1=recents1, recents2=recents2)
     return render_template('index.html', form=form, name1=name1, name2=name2)
 
 #Run app

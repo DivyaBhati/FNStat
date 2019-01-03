@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Hi</title>
+    <script src='static/Chart.min.js'></script>
     <link rel = "stylesheet" href = "{{url_for('static', filename='style.css')}}">
     <link rel = "stylesheet" href = "{{url_for('static', filename='FontSheet.css')}}">
 </head>
@@ -44,6 +45,79 @@
 		<div class = 'stat'>Win Ratio</div>
 		<div class = 'number'>{{ stats2[2] }}</div>
 	</div>
+
+	<div class="graphcontainer">
+		<div class="graphtitle"> K/D Over Last 10 Sessions </div>
+		<div class="legend"> 
+			<div> {{ name1 }} </div> 
+			<div> {{ name2 }} </div>
+		</div>
+		<div class="graph">
+    	<center>
+    		<canvas id="chart" width="600" height="400"></canvas>
+    		<script>
+     	  // line chart data
+       		var lineData = {
+       			type : 'line',
+       			labels : [{% for item in recents2 %}
+                      "{{item}}",
+                  {% endfor %}],
+       			datasets : [
+          			{
+                	fillColor: "rgba(151,187,205,0.4)",
+                	strokeColor: "rgba(75,93,102,1)",
+               		pointColor: "rgba(75,93,102,1)",
+            		data: [{% for item in recents1 %}
+                          {{ item }},
+                        	{% endfor %}]
+          			},
+          			{
+                	fillColor: "rgba(200,187,205,0.4)",
+                	strokeColor: "rgba(100,93,102,1)",
+               		pointColor: "rgba(100,93,102,1)",
+            		data: [{% for item in recents2 %}
+                          {{ item }},
+                        	{% endfor %}]
+          			}
+          		],
+          		options: {
+      				legend: {
+            			display: true,
+            			labels: {
+              				fontColor: 'rgb(255, 99, 132)'
+            			}
+        			},
+        			scales: {
+	                    xAxes: [{
+	                            display: true,
+	                            scaleLabel: {
+	                                display: true,
+	                                labelString: 'Month'
+	                            }
+	                        }],
+	                    yAxes: [{
+	                            display: true,
+	                            ticks: {
+	                                beginAtZero: true,
+	                                steps: 10,
+	                                stepValue: 5,
+	                                max: 100
+	                            }
+	                        }]
+                	}
+				}
+       		}
+
+       		// get line chart canvas
+      		var mychart = document.getElementById("chart").getContext("2d");
+       		// draw line chart
+       		new Chart(mychart).Line(lineData, {
+            	
+        	});
+    		</script>
+  		</center>
+  		</div>
+  	</div>
 	{% endif %}
 </div>
 

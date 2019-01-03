@@ -16,4 +16,12 @@ def get_player_stats(playername):
 	playerstats = []
 	for i in range(7,12):
 		playerstats.append(playerinfo[i]['value'])
-	return playerstats
+	
+	#recents = list of K/D ratio through last 10 sessions
+	recents = []
+	for i in playerresponse.json()['recentMatches']:
+		kd = i['kills'] / i['matches']
+		recents.append(round(kd, 2))
+
+	return playerstats, recents
+

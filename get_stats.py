@@ -11,7 +11,6 @@ def get_player_stats(playername):
 	playerurl = "https://api.fortnitetracker.com/v1/profile/pc/" + playername
 	playerresponse = requests.get(playerurl, headers = headers)
 	playerinfo = playerresponse.json()['lifeTimeStats']
-
 	#playerstats = list: matches played, wins, win%, kills, k/d
 	playerstats = []
 	for i in range(7,12):
@@ -23,5 +22,10 @@ def get_player_stats(playername):
 		kd = i['kills'] / i['matches']
 		recents.append(round(kd, 2))
 
-	return playerstats, recents
+	#wins: [solos, duos, squads]
+	stats = playerresponse.json()['stats']
+	wins = [stats['p2']['top1']['value'], stats['p10']['top1']['value'], stats['p9']['top1']['value']]
 
+	return playerstats, recents, wins
+
+get_player_stats('divzzz')

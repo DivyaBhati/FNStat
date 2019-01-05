@@ -118,7 +118,23 @@ form {
 }
 
 .graph {
+	padding: 0em;
+}
+
+.piecontainer {
+	margin: auto;
+	width: 70%;
+	height: 38em;
+ 	border: 2px solid black;
+ 	background-color: var(--form-bg);
+  	margin-top: 2em;
+  	margin-bottom: 2em;
+}
+
+.piegraphs {
 	padding-top: 2em;
+  	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 .legend {
@@ -144,5 +160,9 @@ form {
 .legend div:nth-child(2) {
 	padding-top: .25em;
 	background-color: rgba(200,187,205,0.4);
+}
+
+.pie {
+	height: 3em;
 }
 

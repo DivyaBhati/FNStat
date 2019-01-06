@@ -27,5 +27,3 @@ def get_player_stats(playername):
 	wins = [stats['p2']['top1']['value'], stats['p10']['top1']['value'], stats['p9']['top1']['value']]
 
 	return playerstats, recents, wins
-
-get_player_stats('divzzz')

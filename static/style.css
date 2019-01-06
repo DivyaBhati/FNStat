@@ -1,14 +1,18 @@
 :root {
-  --main-bg: #838E83;
-  --form-bg: #C9CEBD;
-  --form-text: #C4403E;
+  --main-bg: #ffffff;
+  --form-bg: #66d7ee;
+  --form-text: #507e87;
 
-  --name-bg: #B2BCAA;
+  --name-bg: #66d7ee;
+  --name-text: #507e87;
 
-  --stat-text: #C9CEBD;
-  --number-text: #94403E;
-  --stat-bg: #6C6061;
-  --number-bg: #C9CEBD;
+  --stat-text: #507e87;
+  --stat-bg: #ff786a;
+
+  --number-text: #ff786a;
+  --number-bg: #bfecf5;
+
+  --graph-bg: white;
 }
 
 body {
@@ -28,7 +32,7 @@ body {
 
 .vs {
 	background-color: var(--name-bg);
-	color: var(--stat-bg);
+	color: var(--name-text);
 	font-family: 'open_sansbold';
 	text-align: center;
 	padding-top: 1em;
@@ -49,7 +53,7 @@ body {
 
 .name {
 	background-color: var(--name-bg);
-	color: var(--stat-bg);
+	color: var(--name-text);
 	font-family: 'open_sansbold';
 	text-align: center;
 	padding-top: .6em;
@@ -61,7 +65,7 @@ body {
 .number {
 	background-color: var(--number-bg);
 	color: var(--number-text);
-	font-family: 'open_sansbold';
+	font-family: 'open_sanslight';
 	text-align: center;
 	padding-top: 1.2em;
 	font-size: 2em;	
@@ -69,6 +73,8 @@ body {
 }
 
 .enterinfo {
+	border-bottom: 1em solid #bfecf5;
+	border-right: 1em solid #bfecf5;
 	font-family: 'open_sansregular';
 	font-size: 1em;
 	background-color: var(--form-bg);
@@ -100,7 +106,7 @@ form {
 	width: 70%;
 	height: 44em;
  	border: 2px solid black;
- 	background-color: var(--form-bg);
+ 	background-color: var(--graph-bg);
   	margin-top: 2em;
   	margin-bottom: 2em;
 }
@@ -108,7 +114,7 @@ form {
 .graphtitle {
 	height: 3em;
 	background-color: var(--name-bg);
-	color: var(--stat-bg);
+	color: var(--name-text);
 	font-family: 'open_sansbold';
 	text-align: center;
 	padding-top: .8em;
@@ -126,7 +132,7 @@ form {
 	width: 70%;
 	height: 38em;
  	border: 2px solid black;
- 	background-color: var(--form-bg);
+ 	background-color: var(--graph-bg);
   	margin-top: 2em;
   	margin-bottom: 2em;
 }
@@ -139,7 +145,7 @@ form {
 
 .legend {
 	height: 2em;
-	background-color: var(--name-bg);
+	background-color: white;
 	color: var(--stat-bg);
 	font-family: 'open_sanslight';
 	text-align: center;
@@ -154,12 +160,12 @@ form {
 
 .legend div:nth-child(1) {
 	padding-top: .25em;
-	background-color: rgba(151,187,205,0.4);
+	background-color: rgba(226,280,307,1);
 }
 
 .legend div:nth-child(2) {
 	padding-top: .25em;
-	background-color: rgba(200,187,205,0.4);
+	background-color: rgba(300,240,257,1);
 }
 
 .pie {

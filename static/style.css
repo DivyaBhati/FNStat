@@ -56,8 +56,8 @@ body {
 	color: var(--name-text);
 	font-family: 'open_sansbold';
 	text-align: center;
-	padding-top: .6em;
-	font-size: 2.4em;
+	padding-top: .8em;
+	font-size: 2em;
 	text-transform: uppercase;
 	border-bottom: 2px solid black;
 }
@@ -124,7 +124,7 @@ form {
 }
 
 .graph {
-	padding: 0em;
+	padding-top: 1em;
 }
 
 .piecontainer {

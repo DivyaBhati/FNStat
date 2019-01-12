@@ -1,2 +1,11 @@
 # FNStat
-Compare players' Fortnite stats in an easy-to-read way
+*Compare players' Fortnite stats in a more visual way.*
+
+## How To Set-Up On Your Computer:
+You have to generate your own API key to access the data.
+1. Create an account on [Fortnite Tracker](https://thetrackernetwork.com/auth/login?domain=fortnitetracker.com&returnUrl=/)
+2. Retrieve your key [here](https://fortnitetracker.com/site-api)
+3. Go into get_stats.py and:
+  * Replace the URL with the link for "Get Fortnite BR Player Stats"
+  * Replace the key with your TRN API key
+4. In your terminal run "python3 app.py"

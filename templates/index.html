@@ -25,25 +25,55 @@
 		<div class = 'vs'> VS </div>
 		<div class = 'name'>{{ name2 }} </div>
 
-		<div class = 'number'>{{ stats1[1] }}</div>
+		{% if stats1[1] >= stats2[1] or stats2[1] == None %}
+		<div class = 'numberwin'>{{ stats1[1] }}</div>
 		<div class = 'stat'>Wins</div>
 		<div class = 'number'>{{ stats2[1] }}</div>
+		{% else %}
+		<div class = 'number'>{{ stats1[1] }}</div>
+		<div class = 'stat'>Wins</div>
+		<div class = 'numberwin'>{{ stats2[1] }}</div>
+		{% endif %}
 
-		<div class = 'number'>{{ stats1[3] }}</div>
+		{% if stats1[3] >= stats2[3] or stats2[3] == None %}
+		<div class = 'numberwin'>{{ stats1[3] }}</div>
 		<div class = 'stat'>Kills</div>
 		<div class = 'number'>{{ stats2[3] }}</div>
+		{% else %}
+		<div class = 'number'>{{ stats1[3] }}</div>
+		<div class = 'stat'>Kills</div>
+		<div class = 'numberwin'>{{ stats2[3] }}</div>
+		{% endif %}
 
-		<div class = 'number'>{{ stats1[0] }}</div>
-		<div class = 'stat'>Games Played</div>
-		<div class = 'number'>{{ stats2[0] }}</div>
-
-		<div class = 'number'>{{ stats1[4] }}</div>
+		{% if stats1[4] >= stats2[4] or stats2[4] == None %}
+		<div class = 'numberwin'>{{ stats1[4] }}</div>
 		<div class = 'stat'>K/D Ratio</div>
 		<div class = 'number'>{{ stats2[4] }}</div>
+		{% else %}
+		<div class = 'number'>{{ stats1[4] }}</div>
+		<div class = 'stat'>K/D Ratio</div>
+		<div class = 'numberwin'>{{ stats2[4] }}</div>
+		{% endif %}
 
-		<div class = 'number'>{{ stats1[2] }}</div>
-		<div class = 'stat'>Win Ratio</div>
-		<div class = 'number'>{{ stats2[2] }}</div>
+		{% if stats1[2] >= stats2[2] or stats2[2] == None %}
+		<div class = 'numberwin'>{{ stats1[2] }}%</div>
+		<div class = 'stat'>Win Rate</div>
+		<div class = 'number'>{{ stats2[2] }}%</div>
+		{% else %}
+		<div class = 'number'>{{ stats1[2] }}%</div>
+		<div class = 'stat'>Win Rate</div>
+		<div class = 'numberwin'>{{ stats2[2] }}%</div>
+		{% endif %}
+
+		{% if stats1[0] >= stats2[0] or stats2[0] == None %}
+		<div class = 'numberwin'>{{ stats1[0] }}</div>
+		<div class = 'stat'>Matches</div>
+		<div class = 'number'>{{ stats2[0] }}</div>
+		{% else %}
+		<div class = 'number'>{{ stats1[0] }}</div>
+		<div class = 'stat'>Matches</div>
+		<div class = 'numberwin'>{{ stats2[0] }}</div>
+		{% endif %}
 	</div>
 
 	<div class="graphcontainer">
@@ -67,19 +97,19 @@
        			datasets : [
           			{
           			label: "{{ name1 }}",
-                	backgroundColor: 'rgba(226,280,307,.7)',
+                	backgroundColor: 'rgba(226,280,307,.6)',
                 	borderColor: 'rgba(75,93,102,1)',
                		pointBackgroundColor: 'rgba(75,93,102,1)',
-            		data: [{% for item in recents1 %}
+            		data: [{% for item in recents1[::-1] %}
                           {{ item }},
                         	{% endfor %}]
           			},
           			{
           			label: "{{ name2 }}",
-                	backgroundColor: "rgba(300,240,257,.7)",
+                	backgroundColor: "rgba(300,240,257,.6)",
                 	borderColor: "rgba(100,93,102,1)",
                		pointBackgroundColor: "rgba(100,93,102,1)",
-            		data: [{% for item in recents2 %}
+            		data: [{% for item in recents2[::-1] %}
                           {{ item }},
                         	{% endfor %}]
           			}

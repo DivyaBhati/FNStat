@@ -7,16 +7,21 @@
   --name-text: #507e87;
 
   --stat-text: #507e87;
-  --stat-bg: #ff786a;
+  --stat-bg: #bfecf5;
 
-  --number-text: #ff786a;
-  --number-bg: #bfecf5;
+  --number-text: black;
+  --number-bg: white;
 
   --graph-bg: white;
 }
 
 body {
-	background-color: var(--main-bg);	
+	background: url(BG.png);
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	resize: both;
+  	overflow: scroll;
+  	background-attachment: fixed;
 }
 
 .grid {
@@ -72,6 +77,19 @@ body {
 	text-transform: uppercase;
 }
 
+.numberwin {
+	background-color: var(--number-bg);
+	color: var(--number-text);
+	font-family: 'open_sanslight';
+	text-align: center;
+	padding-top: 1.2em;
+	font-size: 2em;	
+	text-transform: uppercase;
+
+	text-decoration-line: underline;
+	text-decoration-color: rgb(50, 200, 50);
+}
+
 .enterinfo {
 	border-bottom: 1em solid #bfecf5;
 	border-right: 1em solid #bfecf5;
@@ -124,7 +142,7 @@ form {
 }
 
 .graph {
-	padding-top: 1em;
+	padding: 1em;
 }
 
 .piecontainer {
@@ -146,7 +164,7 @@ form {
 .legend {
 	height: 2em;
 	background-color: white;
-	color: var(--stat-bg);
+	color: var(--name-text);
 	font-family: 'open_sanslight';
 	text-align: center;
 	padding-top: 0em;

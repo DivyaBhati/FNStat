@@ -1,10 +1,9 @@
-#TRN-Api-Key: 805daa19-876e-4b8a-b352-0f9d499c1391
 import requests
 
-URL = "https://api.fortnitetracker.com/v1/profile/pc/divzzz"
+URL = "ADD YOUR URL HERE"
 
 headers = {
-	'TRN-Api-Key' : '805daa19-876e-4b8a-b352-0f9d499c1391'
+	'TRN-Api-Key' : 'ADD YOUR TRN API KEY HERE'
 }
 
 def get_player_stats(playername):
